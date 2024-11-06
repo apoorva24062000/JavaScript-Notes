@@ -1,0 +1,85 @@
+Everything in javascript happens  inside Execution Context.
+ 
+ Execution Context has 2 components -
+
+ 1. Memory - it stores all variable and functions in form of key value pair.
+             eg - a:10
+                fn:{-----} 
+            it is also know as variable enviornment.
+
+
+2. Code - whole js code is executed line by line.
+                       it is also know as Thread of Execution.
+
+javascript is Synchronous single-threaded language.
+  single threaded means it can execute one command at a time.
+  it can execute one command at a time in specific order.
+  it can go to second line after Execution of first line..
+
+
+when we run a JS program, Execution context is created.
+
+ 
+ eg --  var n = 2;
+ function sqaure (num) {
+    var ans =  num * num;
+    return ans;
+ }
+ var sqaure2 = sqaure(n);
+ var sqaure4 = sqaure(4);
+
+     Execution Context
+
+     1. memory creation  phase - memory is allocated to all var and functions in js code.
+
+ memory                                         code
+ n: undefined
+ fn sqaure(num){----} -- it will store whole function.
+ sqaure2: undefined ---- it will be replaced by 4 ..
+ sqaure4: undefined------ it will be replaced by 16.
+
+  2. code Execution phase - code is executed line by line.
+
+  memory                Code
+n =2;                whenever a function is invoked new Execution context is created.
+                      memory            code
+                      num: 2           ans = 2*2 = 4 
+                      ans:4
+
+
+
+                      memory               code 
+                      num:4               ans = 16
+                      ans:16
+
+
+imp   1. js code is executed in 2 phases
+      memory is allocated.(memory creation)
+      it allocates "undefined" to variables.
+      it copy pastes whole function.
+      code is executed line by line.(code Execution)
+      when a new funvtion is invoked new Execution context is created.
+
+Call Stack - whenever any js program is executed it is populated with global Execution context.
+            wehnever a function is invoked a Execution context is created it is also populated in call stack.
+
+
+             E2  --- for sqaure(4)
+              . 
+               E1 -- for sqaure(n)
+               .
+              GEC
+
+once a function is executed its Execution context is popped out.
+one whole js code is executed call stack is empty.
+
+call stack maintains the order of Execution context.
+
+
+
+
+
+                          
+
+
+ 

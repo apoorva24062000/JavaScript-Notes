@@ -1,0 +1,150 @@
+Hoisting in javascript
+Code:
+getName();
+console.log(x);
+console.log(getName);
+
+var x = 7;
+function getName(){
+    console.log("Namste javascript");
+}
+
+OUTPUT -  Namste javascript
+           undefined
+           function getName(){
+            console.log("Namste javascript");
+           }
+
+
+Hoisting is the process by which we  can access variables and function without intializing them.
+
+Memory is allocated before code Execution.
+
+ 
+ Code:
+
+ getName();
+ console.log(x);
+ console.log(getName)
+
+
+ var x = 7;
+
+ // arrow functions
+ var getName = () => {
+    console.log("Namste javascript)
+ }
+
+
+ // OUTPUT:
+ERROR - getName is not a function.
+getName will act as variable . "undefined value will be allocated to it.
+
+--------------------------------------------------------------------------------------------------------
+
+How Functions work in JS ---
+
+CODE:
+
+var x = 1;
+a();
+b();
+
+console.log(x); 
+
+function a(){
+    var x = 10;
+    console.log(x);
+}
+
+function b(){
+    var x = 100;
+    console.log(x);
+}
+
+OUTPUT-
+        10
+        100
+        1
+
+
+        IN Memory allocation phase  x, a() and b()  are allocated memory.
+        in code Execution phase , code is executed line by line.
+
+------------------------------------------------------------------------------------------
+
+Shortest program in javascript:
+
+
+empty file is shortest js program.
+
+window  AND this keyword:
+
+window is global object created at time when we will run js code.
+
+ javascript engine has responsiblity to create window object.
+  this refers to window which is global object.
+  this === window -- true
+
+global space - anything outside functional scope is global space.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Undefined vs Not- defined:
+
+var a = 7;
+javascript will allocate memory to a even it is not executed .
+javascript will assign undefined.
+it is like a place-holder.
+ it hold the actual value after code execution phase.
+
+
+ NOT-DEFINED - when we try to access something we haven't defined.  it will give us refernce error that "x is not defined."
+
+eg - console.log(x);
+
+
+javascript is loosely typed language.
+it is weakly typed language.
+
+Example
+
+var a ;
+console.log(a);
+a =10;
+console.log(a);
+a = "hello world"
+console.log(a);
+
+
+OUTPUT:
+
+   undefined
+   10
+   hello world
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

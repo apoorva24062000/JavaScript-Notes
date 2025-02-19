@@ -1,0 +1,53 @@
+Lexical Enviornment:
+
+
+Code:
+
+function a(){
+console.log(b);
+}
+var b = 10;
+a(); 
+
+
+OUTPUT: 10
+
+we will try to find out b in function a. (functional scope).
+then it will search b in global scope.
+
+SCOPE- is the space where we can access specific variable /function in our code.
+
+
+CODE:
+
+function a(){
+    var b = 10;
+    c();
+    function c(){
+
+    }
+}
+a();
+
+LEXICAL ENVIORNMENT :
+
+It is created whenever execution context is created.
+LOCAL MEMORY + LEXICAL ENVIORNMENT OF PARENT.
+
+LEXICAL means where it is present physically.
+
+
+
+in above code , c() is lexically inside function a().
+it will have access to it's local memory and lexical enviornment of function a().
+
+a() is lexically inside global scope.
+
+
+SCOPE CHAIN:
+
+it is the chain of lexical enviornment.
+it defines whether a function or variable is present inside scope or not.
+
+in above code , c() has acces sto it's local memory + lexical enviornment of function a() + global scope.
+
